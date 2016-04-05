@@ -1,6 +1,6 @@
 #!/bin/bash
 # ========================================================================================
-#/usr/sbin/asterisk -rx 'sip show registry' | grep -i "Registered" | wc -l
+#netstat -at | grep ":xmpp-client" | grep "ESTABLISHED" | wc -l
 #
 # Written by    : Aleksey Lavrov
 # Release       : 0.1
@@ -88,7 +88,7 @@ shift
 done
 
 #REGISTRY=`sudo $ASTERISK -rx 'sip show registry' | grep -i "Registered" | wc -l`
-CONNECTED = `netstat -at | grep ":xmpp-client" | grep "ESTABLISHED" | wc -l`
+CONNECTED=`netstat -at | grep ":xmpp-client" | grep "ESTABLISHED" | wc -l`
 # Return
 
 echo "OK - ${CONNECTED}."
