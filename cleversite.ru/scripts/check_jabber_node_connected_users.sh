@@ -88,9 +88,7 @@ shift
 done
 
 #REGISTRY=`sudo $ASTERISK -rx 'sip show registry' | grep -i "Registered" | wc -l`
-CONNECTED=`netstat -at | grep ":xmpp-client" | grep "ESTABLISHED" | wc -l`
+CONNECTED=`netstat -a | grep ":xmpp-client" | grep "ESTABLISHED" | wc -l`
 # Return
-
-echo "OK - ${CONNECTED}."
+echo "OK - ${CONNECTED}. | CONNECTED=${CONNECTED}"
 exit $STATE_OK
-
